@@ -60,9 +60,9 @@ public abstract class GAction : MonoBehaviour
             if (!conditions.ContainsKey(p.Key))
             {
                 return false;
-            }
-            return true;
+            }     
         }
+        return true;
     }
 
     public abstract bool PrePreform();
