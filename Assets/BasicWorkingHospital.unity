@@ -2598,10 +2598,13 @@ PrefabInstance:
       addedObject: {fileID: 1387713833}
     - targetCorrespondingSourceObject: {fileID: 7881807149238628900, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1387713834}
+    - targetCorrespondingSourceObject: {fileID: 7881807149238628900, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1387713835}
     - targetCorrespondingSourceObject: {fileID: 7881807149238628900, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1387713834}
+      addedObject: {fileID: 1387713837}
   m_SourcePrefab: {fileID: 100100000, guid: d36c43225f9391e4c8810c98eb7ef85e, type: 3}
 --- !u!1 &1387713832 stripped
 GameObject:
@@ -2642,14 +2645,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b06301b379b9746a7a6dc085c78db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoToHospital
-  actionName: Action
+  actionName: GoToHospital
   cost: 1
-  target: {fileID: 1000317771}
-  targetTag: 
-  duration: 0
+  target: {fileID: 2105955016}
+  targetTag: Door
+  duration: 2
   preConditions: []
   afterEffects:
-  - key: isWaiting
+  - key: hasArrived
     value: 0
   agent: {fileID: 0}
   running: 0
@@ -2667,6 +2670,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Patient
   actions: []
   currentAction: {fileID: 0}
+--- !u!114 &1387713837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387713832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3ccb8382588764390f8adfc9363f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoToWaitingRoom
+  actionName: GoToWaitingRoom
+  cost: 1
+  target: {fileID: 1000317771}
+  targetTag: WaitingArea
+  duration: 0
+  preConditions:
+  - key: hasArrived
+    value: 0
+  afterEffects:
+  - key: isWaiting
+    value: 0
+  agent: {fileID: 0}
+  running: 0
 --- !u!1 &1445506242
 GameObject:
   m_ObjectHideFlags: 0
