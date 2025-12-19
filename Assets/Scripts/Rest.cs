@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GoHome : GAction
+public class Rest : GAction
 {
     public override bool PrePreform()
     {
@@ -11,7 +11,7 @@ public class GoHome : GAction
 
     public override bool PostPreform()
     {
-        Destroy(this.gameObject);
+        beliefs.RemoveState("exhausted");
         return true;
     }
 }
