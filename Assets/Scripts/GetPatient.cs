@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GoToWaitingRoom : GAction
+public class GetPatient : GAction
 {
     public override bool PrePreform()
     {
@@ -11,7 +11,6 @@ public class GoToWaitingRoom : GAction
 
     public override bool PostPreform()
     {
-        GWorld.Instance.GetWorld().ModifyState("Waiting", 1);
         return true;
     }
 }
