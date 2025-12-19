@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 6466500925176636109}
   - component: {fileID: 5593426242422920442}
   - component: {fileID: 8429862949590008552}
+  - component: {fileID: 728545493421560513}
   m_Layer: 0
   m_Name: Patient
   m_TagString: Untagged
@@ -3123,6 +3124,19 @@ MonoBehaviour:
     value: 0
   agent: {fileID: 0}
   running: 0
+--- !u!114 &728545493421560513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881807149238628900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56a8c5873a40498f9f97550fc5588c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GAgentVisual
+  thisAgent: {fileID: 6466500925176636109}
 --- !u!1 &7927236269272520591
 GameObject:
   m_ObjectHideFlags: 0
