@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class GetTreated : GAction
+public class GoToCubicle : GAction
 {
     public override bool PrePreform()
     {
@@ -16,8 +16,10 @@ public class GetTreated : GAction
 
     public override bool PostPreform()
     {
-        GWorld.Instance.GetWorld().ModifyState("isTreated", 1);
+        GWorld.Instance.GetWorld().ModifyState("TreatingPatient", 1);
+        GWorld.Instance.AddCubicle(target);
         inventory.RemoveItem(target);
+        GWorld.Instance.GetWorld().ModifyState("FreeCubicle", 1);
         return true;
     }
 }
