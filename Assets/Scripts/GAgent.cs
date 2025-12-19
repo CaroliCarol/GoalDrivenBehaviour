@@ -50,18 +50,19 @@ public class GAgent : MonoBehaviour
     {
         if (currentAction != null && currentAction.running)
         {
-            float distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
-            if (currentAction.agent.hasPath && distanceToTarget < 2f) //currentAction.agent.remainingDistance < 0.5f)
+            //float distanceToTarget = Vector3.Distance(currentAction.target.transform.position, this.transform.position);
+            if (currentAction.agent.hasPath && currentAction.agent.remainingDistance < 1.0f)
             {
-                Debug.Log("Distance to Goal:" + currentAction.agent.remainingDistance);
+                //Debug.Log("Distance to Goal:" + currentAction.agent.remainingDistance);
                 if (!invoked)
                 {
                     Invoke("CompleteAction", currentAction.duration);
                     invoked = true;
                 }
             }
+            return;
         }
-        return;
+       
 
         if (planner == null || actionQueue == null)
         {
